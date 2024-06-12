@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: xoexhwdao-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: xoexhwdao-python 
+  name: xoexhwdao-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: xoexhwdao-python
+    weight: 100 
